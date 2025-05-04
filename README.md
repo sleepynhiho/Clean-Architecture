@@ -24,6 +24,8 @@
 
 Dự án tuân theo cấu trúc thư mục dựa trên các lớp của Clean Architecture:
 
+
+```
 CLEAN-ARCHITECTURE/
 └── src/
     ├── domain/                # 💡 Business logic cốt lõi
@@ -41,6 +43,7 @@ CLEAN-ARCHITECTURE/
     │   └── database/          # (Sử dụng InMemory ở đây)
     │
     └── README.md              # 📘 Tài liệu hướng dẫn
+```
 
 
 **Quy tắc phụ thuộc (Dependency Rule):** Mũi tên phụ thuộc luôn hướng vào trong.
