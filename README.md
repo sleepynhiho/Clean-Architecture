@@ -24,24 +24,23 @@
 
 Dự án tuân theo cấu trúc thư mục dựa trên các lớp của Clean Architecture:
 
-CLEAN ARCHITECTURE/
-├── src/
-│ ├── domain/ # Lớp trong cùng: Logic nghiệp vụ cốt lõi
-│ │ ├── entities/ # - User.js (Đối tượng nghiệp vụ)
-│ │ ├── use_cases/ # - AddUser.js, GetUserById.js (Các trường hợp sử dụng)
-│ │ └── repositories/ # - UserRepository.js (Định nghĩa Interface cho Repository)
-│ │
-│ ├── application/ # Lớp Interface Adapters: Chuyển đổi dữ liệu
-│ │ ├── controllers/ # - UserController.js (Điều phối yêu cầu)
-│ │ ├── presenters/ # - UserPresenter.js (Định dạng dữ liệu đầu ra)
-│ │ └── repositories/ # - InMemoryUserRepository.js (Triển khai cụ thể của Repository)
-│ │
-│ ├── infrastructure/ # Lớp ngoài cùng: Chi tiết cụ thể (UI, DB, Web...)
-│ │ ├── web/ # - index.html (Giao diện người dùng)
-│ │ │ └── main.js # - (Composition Root & Logic UI)
-│ │ └── database/ # - (Trong ví dụ này, InMemoryUserRepository đóng vai trò này)
+CLEAN-ARCHITECTURE/
+└── src/
+├── domain/ # 💡 Business logic cốt lõi
+│ ├── entities/ # └── User.js (Entity nghiệp vụ)
+│ ├── use_cases/ # └── AddUser.js, GetUserById.js
+│ └── repositories/ # └── UserRepository.js (Interface)
 │
-└── README.md # Tài liệu này
+├── application/ # 🔁 Interface adapters
+│ ├── controllers/ # └── UserController.js
+│ ├── presenters/ # └── UserPresenter.js
+│ └── repositories/ # └── InMemoryUserRepository.js
+│
+├── infrastructure/ # 🌐 Giao diện và lưu trữ
+│ ├── web/ # └── index.html, main.js (Composition Root)
+│ └── database/ # (Sử dụng InMemory ở đây)
+│
+└── README.md # 📘 Tài liệu hướng dẫn
 
 **Quy tắc phụ thuộc (Dependency Rule):** Mũi tên phụ thuộc luôn hướng vào trong.
 `Infrastructure` -> `Application` -> `Domain`. Lớp `Domain` không biết gì về các lớp bên ngoài nó.
