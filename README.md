@@ -28,21 +28,21 @@ Dự án tuân theo cấu trúc thư mục dựa trên các lớp của Clean Ar
 ```
 CLEAN-ARCHITECTURE/
 └── src/
-    ├── domain/                # 💡 Business logic cốt lõi
+    ├── domain/                # Business logic cốt lõi
     │   ├── entities/          # └── User.js (Entity nghiệp vụ)
     │   ├── use_cases/         # └── AddUser.js, GetUserById.js
     │   └── repositories/      # └── UserRepository.js (Interface)
     │
-    ├── application/           # 🔁 Interface adapters
+    ├── application/           # Interface adapters
     │   ├── controllers/       # └── UserController.js
     │   ├── presenters/        # └── UserPresenter.js
     │   └── repositories/      # └── InMemoryUserRepository.js
     │
-    ├── infrastructure/        # 🌐 Giao diện và lưu trữ
+    ├── infrastructure/        # Giao diện và lưu trữ
     │   ├── web/               # └── index.html, main.js (Composition Root)
     │   └── database/          # (Sử dụng InMemory ở đây)
     │
-    └── README.md              # 📘 Tài liệu hướng dẫn
+    └── README.md              # Tài liệu hướng dẫn
 ```
 
 
